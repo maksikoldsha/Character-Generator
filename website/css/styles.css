@@ -1,0 +1,30 @@
+.container {
+    width: 80%; 
+    margin: 0 auto; 
+    border: 1px solid black; 
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.flex-container {
+    display: flex;
+    height: 100%;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+.border-right {
+    border-right: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+.nav-bar {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
