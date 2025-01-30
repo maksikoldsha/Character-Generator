@@ -5,28 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Generator</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <h1>Character Generator</h1>
-    <div class="container">
-    <div class="flex-container">
-        <div class="flex-item border-right">
-            <nav>
-                <ul class="nav-bar">
-                    <li><button><img src="icons/icon1.png" alt="Иконка 1" class="nav-icon"></button></li>
-                    <li><button><img src="icons/icon2.png" alt="Иконка 2" class="nav-icon"></button></li>
-                    <li><button><img src="icons/icon3.png" alt="Иконка 3" class="nav-icon"></button></li>
-                    <li><button><img src="icons/icon4.png" alt="Иконка 4" class="nav-icon"></button></li>
-                    <li><button><img src="icons/icon5.png" alt="Иконка 5" class="nav-icon"></button></li>
-                </ul>
-            </nav>
-            <p>Заглушка 1</p>
+        <div class="flex-container">
+            <div class="flex-item border-right">
+                <nav>
+                    <ul class="nav-bar">
+                        <li><button data-tab="tab1"><i class="fas fa-home nav-icon"></i></button></li>
+                        <li><button data-tab="tab2"><i class="fas fa-envelope nav-icon"></i></button></li>
+                        <li><button data-tab="tab3"><i class="fas fa-cog nav-icon"></i></button></li>
+                        <li><button data-tab="tab4"><i class="fas fa-chart-bar nav-icon"></i></button></li>
+                        <li><button data-tab="tab5"><i class="fas fa-user nav-icon"></i></button></li>
+                    </ul>
+                </nav>
+                <hr>
+                <p>Заглушка 1</p>
+                <div id="tab1" class="tab-content active">Контент для вкладки 1</div>
+                <div id="tab2" class="tab-content">Контент для вкладки 2</div>
+                <div id="tab3" class="tab-content">Контент для вкладки 3</div>
+                <div id="tab4" class="tab-content">Контент для вкладки 4</div>
+                <div id="tab5" class="tab-content">Контент для вкладки 5</div>
+            </div>
+            <div class="flex-item"></div>
         </div>
-        <div class="flex-item">
-            <p>Заглушка 2</p>
-        </div>
-    </div>
-    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
