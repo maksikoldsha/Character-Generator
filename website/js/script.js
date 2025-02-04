@@ -9,8 +9,8 @@ const selectedClothing = {
 
 // Handle tab switching
 document.querySelector('.nav-bar').addEventListener('click', function(e) {
-    if (e.target.tagName === 'I' || e.target.tagName === 'BUTTON') {
-        const target = e.target.tagName === 'I' ? e.target.parentElement : e.target;
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'BUTTON') {
+        const target = e.target.tagName === 'IMG' ? e.target.parentElement : e.target;
         const tabId = target.getAttribute('data-tab');
         
         // Hide all tab contents
