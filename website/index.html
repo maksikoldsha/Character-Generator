@@ -13,23 +13,132 @@
             <div class="flex-item border-right">
                 <nav>
                     <ul class="nav-bar">
-                        <li><button data-tab="tab1"><img src="path/to/your/image1.png" alt="Custom Icon" class="nav-icon"></button></li>
-                        <li><button data-tab="tab2"><img src="path/to/your/image2.png" alt="Custom Icon" class="nav-icon"></i></button></li>
-                        <li><button data-tab="tab3"><img src="path/to/your/image3.png" alt="Custom Icon" class="nav-icon"></button></li>
-                        <li><button data-tab="tab4"><img src="path/to/your/image4.png" alt="Custom Icon" class="nav-icon"></button></li>
-                        <li><button data-tab="tab5"><img src="path/to/your/image5.png" alt="Custom Icon" class="nav-icon"></button></li>
+                        <li><button data-tab="tab1"><img src="img/icon-top.png" alt="Custom Icon" class="nav-icon"></button></li>
+                        <li><button data-tab="tab2"><img src="img/icon-bottom.png" alt="Custom Icon" class="nav-icon"></button></li>
+                        <li><button data-tab="tab3"><img src="img/icon-dress.png" alt="Custom Icon" class="nav-icon"></button></li>
+                        <li><button data-tab="tab4"><img src="img/icon-eyes.png" alt="Custom Icon" class="nav-icon"></button></li>
+                        <li><button data-tab="tab5"><img src="img/icon-hair.png" alt="Custom Icon" class="nav-icon"></button></li>
                     </ul>
                 </nav>
                 <hr>
+                <div id="tab1" class="tab-content active">
 
-                <p>Заглушка 1</p>
-                <div id="tab1" class="tab-content active">Контент для вкладки 1</div>
-                <div id="tab2" class="tab-content">Контент для вкладки 2</div>
-                <div id="tab3" class="tab-content">Контент для вкладки 3</div>
-                <div id="tab4" class="tab-content">Контент для вкладки 4</div>
-                <div id="tab5" class="tab-content">Контент для вкладки 5</div>
+                    <h2 class="category-title">Tops</h2>
+                    <div class="tile-grid">
+                        <div class="tile">
+                            <img src="img/character/t-shirt.png" alt="T-Shirt Style">
+                            <div class="tile-overlay">
+                                <h3>Casual T-Shirt</h3>
+                                <p>Basic everyday wear</p>
+                            </div>
+                        </div>
+                        <div class="tile">
+                            <img src="img/character/hoodie.png" alt="Blouse Style">
+                            <div class="tile-overlay">
+                                <h3>Elegant Blouse</h3>
+                                <p>Perfect for formal occasions</p>
+                            </div>
+                        </div>
+                        <div class="tile">
+                            <img src="images/top3.jpg" alt="Sweater Style">
+                            <div class="tile-overlay">
+                                <h3>Cozy Sweater</h3>
+                                <p>Warm and comfortable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="tab-content">
+                    <h2 class="category-title">Bottoms</h2>
+                    <div class="tile-grid">
+                        <div class="tile">
+                            <img src="img/character/jeans.png" alt="Jeans Style">
+                            <div class="tile-overlay">
+                                <h3>Classic Jeans</h3>
+                                <p>Versatile denim wear</p>
+                            </div>
+                        </div>
+                        <div class="tile">
+                            <img src="images/bottom2.jpg" alt="Skirt Style">
+                            <div class="tile-overlay">
+                                <h3>Pleated Skirt</h3>
+                                <p>Stylish and feminine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab3" class="tab-content">
+                    <h2 class="category-title">Shoes</h2>
+                    <div class="tile-grid">
+                        <div class="tile">
+                            <img src="images/shoes1.jpg" alt="Sneakers">
+                            <div class="tile-overlay">
+                                <h3>Casual Sneakers</h3>
+                                <p>Comfortable footwear</p>
+                            </div>
+                        </div>
+                        <div class="tile">
+                            <img src="images/shoes2.jpg" alt="Boots">
+                            <div class="tile-overlay">
+                                <h3>Stylish Boots</h3>
+                                <p>For colder weather</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab4" class="tab-content">
+                    <h2 class="category-title">Accessories</h2>
+                    <div class="tile-grid">
+                        <div class="tile">
+                            <img src="img/character/hat.png" alt="Hat">
+                            <div class="tile-overlay">
+                                <h3>Summer Hat</h3>
+                                <p>Sun protection</p>
+                            </div>
+                        </div>
+                        <div class="tile">
+                            <img src="images/acc2.jpg" alt="Bag">
+                            <div class="tile-overlay">
+                                <h3>Shoulder Bag</h3>
+                                <p>Everyday accessory</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab5" class="tab-content">
+                    <h2 class="category-title">Outfits</h2>
+                    <div class="tile-grid">
+                        <div class="tile">
+                            <img src="images/outfit1.jpg" alt="Casual Outfit">
+                            <div class="tile-overlay">
+                                <h3>Casual Style</h3>
+                                <p>Complete everyday look</p>
+                            </div>
+                        </div>
+                        <div class="tile">
+                            <img src="images/outfit2.jpg" alt="Formal Outfit">
+                            <div class="tile-overlay">
+                                <h3>Formal Style</h3>
+                                <p>Complete elegant look</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="flex-item"></div>
+            <div class="flex-item">
+                <div class="character-preview">
+                    <h2>Character Preview</h2>
+                    <div class="character-container">
+                        <img src="img/character/base.png" alt="Character Base" class="character-base">
+                        <!-- Clothing layers -->
+                        <div class="clothing-layer" id="outfit-layer"></div>
+                        <div class="clothing-layer" id="top-layer"></div>
+                        <div class="clothing-layer" id="bottom-layer"></div>
+                        <div class="clothing-layer" id="shoes-layer"></div>
+                        <div class="clothing-layer" id="accessories-layer"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     <script src="js/script.js"></script>
 </body>

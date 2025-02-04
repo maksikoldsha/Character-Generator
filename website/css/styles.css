@@ -8,10 +8,25 @@
     border: 1px solid black; 
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    gap: 20px;
+    padding: 20px;
 }
 
 .flex-item {
     flex: 1;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.flex-item:first-child {
+    flex: 0 0 400px;
+}
+
+.flex-item:last-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .border-right {
@@ -30,17 +45,33 @@ h1 {
     padding: 0;
 }
 
-.nav-icon {
-    width: 24px;
-    height: 24px;
-    padding: 10px;
-    border-radius: 8px;
-    transition: background-color 0.3s;
+.nav-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
 }
 
-.nav-icon.active, .nav-icon:hover {
-    background-color: #007bff;
+.nav-bar button:hover {
+    transform: scale(1.1);
+}
+
+.nav-icon {
+    width: 50%;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 8px;
+    color: #333;
+    transition: all 0.3s ease;
+    display: inline-block;
+
+}
+
+.nav-icon.active {
+    background-color: #ff9eef;
     color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tab-content {
@@ -63,19 +94,156 @@ hr {
     border: 1px solid black;
 }
 
-.star {
-    position: absolute;
-    top: -10px;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #fff;
-    animation: fall linear infinite;
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 15px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(100vh);
-    }
+.tile {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: white;
+    cursor: pointer;
+    aspect-ratio: 3/4;
+}
+
+.tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tile:hover img {
+    transform: scale(1.05);
+}
+
+.tile-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.tile:hover .tile-overlay {
+    transform: translateY(0);
+}
+
+.tile-overlay h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.tile-overlay p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.category-title {
+    padding: 15px 20px;
+    margin: 0;
+    color: #333;
+    font-size: 1.5em;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Update nav icons to match clothing categories */
+.nav-bar button[data-tab="tab1"] .nav-icon::before { content: "\f553"; } /* T-shirt icon */
+.nav-bar button[data-tab="tab2"] .nav-icon::before { content: "\f6c3"; } /* Pants icon */
+.nav-bar button[data-tab="tab3"] .nav-icon::before { content: "\f54b"; } /* Shoe icon */
+.nav-bar button[data-tab="tab4"] .nav-icon::before { content: "\f51b"; } /* Accessories icon */
+.nav-bar button[data-tab="tab5"] .nav-icon::before { content: "\f553"; } /* Complete outfit icon */
+
+/* Character Preview Styles */
+.character-preview {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.character-preview h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.character-container {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.character-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.clothing-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.clothing-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+/* Scrollbar Styling */
+.tile-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tile-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.tile-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.tile-grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
