@@ -57,9 +57,9 @@ document.querySelectorAll('.tile').forEach(tile => {
                 break;
             case 'tab5': // Complete outfits
                 selectedClothing.outfit = { src: imgSrc, name: itemName };
-                // Clear individual selections when choosing a complete outfit
+                // Clear individual selections when choosing a complete outfit, except accessories
                 Object.keys(selectedClothing).forEach(key => {
-                    if (key !== 'outfit') {
+                    if (key !== 'outfit' && key !== 'accessories') {
                         selectedClothing[key] = null;
                         const layer = document.getElementById(`${key}-layer`);
                         if (layer) {
@@ -101,7 +101,7 @@ function updateClothingLayer(layerId, imgSrc) {
 
 // Function to update complete outfit
 function updateOutfitLayer(imgSrc) {
-    const layers = ['top-layer', 'bottom-layer', 'shoes-layer', 'accessories-layer'];
+    const layers = ['top-layer', 'bottom-layer', 'shoes-layer'];
     layers.forEach(layerId => {
         const layer = document.getElementById(layerId);
         if (layer) {
