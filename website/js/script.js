@@ -72,12 +72,6 @@ document.querySelectorAll('.tile').forEach(tile => {
         }
         
         if (layerId) {
-            // Clear outfit when selecting individual items
-            selectedClothing.outfit = null;
-            const outfitLayer = document.getElementById('outfit-layer');
-            if (outfitLayer) {
-                clearLayer(outfitLayer);
-            }
             updateClothingLayer(layerId, imgSrc);
         }
 
@@ -134,8 +128,21 @@ function updatePreviewTitle() {
     const previewTitle = document.querySelector('.character-preview h2');
     if (!previewTitle) return;
 
+    // Добавляем outfit если он выбран
     if (selectedClothing.outfit) {
-        previewTitle.textContent = `Preview: ${selectedClothing.outfit.name}`;
+        selectedItems.push(selectedClothing.outfit.name);
+    }
+
+    // Добавляем остальные предметы одежды
+    Object.entries(selectedClothing).forEach(([key, value]) => {
+        if (value && key !== 'outfit') {
+            selectedItems.push(value.name);
+        }
+    });
+
+    // Обновляем заголовок
+    if (selectedItems.length > 0) {
+        previewTitle.textContent = selectedItems.join(' + ');
     } else {
         const selections = [];
         if (selectedClothing.top) selections.push(selectedClothing.top.name);
